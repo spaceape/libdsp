@@ -19,7 +19,7 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-set(DSP_SRC_DIR ${GLOBL_SRC_DIR}/dsp)
+set(DSP_SDK_DIR ${HOST_SDK_DIR}/dsp)
 
 set(inc
   dc.h
@@ -41,11 +41,11 @@ set_target_properties(${NAME} PROPERTIES PREFIX "${PREFIX}")
 target_link_libraries(${NAME} ${libs})
 
 if(SDK)
-  file(MAKE_DIRECTORY ${DSP_SRC_DIR})
+  file(MAKE_DIRECTORY ${DSP_SDK_DIR})
   install(
     FILES
       ${inc}
     DESTINATION
-      ${DSP_SRC_DIR}
+      ${DSP_SDK_DIR}
   )
 endif(SDK)
